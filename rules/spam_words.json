@@ -1,0 +1,1901 @@
+{
+  "name": "outbound-email-copy-spamtrap-word-analyzer rules",
+  "version": "1.0.0",
+  "description": "Curated, weighted dictionary of spam-trigger and risky phrasing for B2B cold email. Weights are 1 (mild) to 10 (severe). Terms are matched case-insensitively on whole words/phrases after HTML tags, URLs and merge tags are masked. Edit freely: this file is data, not code.",
+  "weight_scale": {
+    "1-4": "low",
+    "5-7": "medium",
+    "8-10": "high"
+  },
+  "categories": {
+    "urgency": {
+      "label": "False urgency & pressure",
+      "description": "Artificial deadlines and pressure language that filters and recipients associate with spam."
+    },
+    "financial": {
+      "label": "Financial & money hooks",
+      "description": "Income, money, credit and investment claims typical of scams and bulk promotions."
+    },
+    "free_offer": {
+      "label": "Free offers & giveaways",
+      "description": "Free, no-cost and giveaway language. Low weight alone, but stacks quickly."
+    },
+    "guarantee": {
+      "label": "Guarantees & no-risk claims",
+      "description": "Absolute promises and risk-reversal claims that read as promotional."
+    },
+    "aggressive_sales": {
+      "label": "Aggressive sales jargon",
+      "description": "Hard-sell calls to action and discount language that is out of place in 1:1 cold outreach."
+    },
+    "deceptive": {
+      "label": "Deceptive or phishing-like phrasing",
+      "description": "Language that fakes familiarity, prior contact or account/security notices."
+    },
+    "hype": {
+      "label": "Hype & superlatives",
+      "description": "Exaggerated claims that lower trust and raise content-filter scores."
+    },
+    "spam_disclaimer": {
+      "label": "Spam self-disclaimers",
+      "description": "Phrases that try to pre-empt spam judgement. These are strong spam signals."
+    },
+    "cliche_tone": {
+      "label": "Cold-email cliches & pushy tone",
+      "description": "Overused openers and follow-ups. Low filter weight, but they hurt reply rates and mark templated mail."
+    },
+    "sensitive": {
+      "label": "Regulated or high-risk topics",
+      "description": "Pharma, gambling, adult and crypto terms that are heavily filtered in B2B mail."
+    }
+  },
+  "terms": [
+    {
+      "id": "SW001",
+      "term": "act now",
+      "category": "urgency",
+      "weight": 8,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove the deadline; give a low-friction reason to reply instead."
+    },
+    {
+      "id": "SW002",
+      "term": "act fast",
+      "category": "urgency",
+      "weight": 7,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Drop the pressure; state the value plainly."
+    },
+    {
+      "id": "SW003",
+      "term": "urgent",
+      "category": "urgency",
+      "weight": 8,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Avoid 'urgent' in prospecting mail; it is a classic spam and phishing trigger."
+    },
+    {
+      "id": "SW004",
+      "term": "immediately",
+      "category": "urgency",
+      "weight": 5,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Replace with a concrete, relaxed next step."
+    },
+    {
+      "id": "SW005",
+      "term": "limited time",
+      "category": "urgency",
+      "weight": 8,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove time-limited framing unless a real deadline exists, and state it factually."
+    },
+    {
+      "id": "SW006",
+      "term": "limited time offer",
+      "category": "urgency",
+      "weight": 8,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove promotional deadline language."
+    },
+    {
+      "id": "SW007",
+      "term": "last chance",
+      "category": "urgency",
+      "weight": 9,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove; 'last chance' is a strong promotional trigger."
+    },
+    {
+      "id": "SW008",
+      "term": "final notice",
+      "category": "urgency",
+      "weight": 8,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove; reads like a collections or phishing notice."
+    },
+    {
+      "id": "SW009",
+      "term": "expires today",
+      "category": "urgency",
+      "weight": 7,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove the artificial expiry."
+    },
+    {
+      "id": "SW010",
+      "term": "expires soon",
+      "category": "urgency",
+      "weight": 7,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove the artificial expiry."
+    },
+    {
+      "id": "SW011",
+      "term": "hurry",
+      "category": "urgency",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove pressure language."
+    },
+    {
+      "id": "SW012",
+      "term": "don't miss out",
+      "category": "urgency",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Replace with the specific outcome the reader gets."
+    },
+    {
+      "id": "SW013",
+      "term": "don't wait",
+      "category": "urgency",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove pressure language."
+    },
+    {
+      "id": "SW014",
+      "term": "while supplies last",
+      "category": "urgency",
+      "weight": 7,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove retail promotion language."
+    },
+    {
+      "id": "SW015",
+      "term": "today only",
+      "category": "urgency",
+      "weight": 7,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove promotional deadline."
+    },
+    {
+      "id": "SW016",
+      "term": "offer ends",
+      "category": "urgency",
+      "weight": 7,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove promotional deadline."
+    },
+    {
+      "id": "SW017",
+      "term": "now or never",
+      "category": "urgency",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove pressure language."
+    },
+    {
+      "id": "SW018",
+      "term": "time is running out",
+      "category": "urgency",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove pressure language."
+    },
+    {
+      "id": "SW019",
+      "term": "before it's too late",
+      "category": "urgency",
+      "weight": 5,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove pressure language."
+    },
+    {
+      "id": "SW020",
+      "term": "deadline",
+      "category": "urgency",
+      "weight": 5,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Only mention real deadlines, factually."
+    },
+    {
+      "id": "SW021",
+      "term": "respond immediately",
+      "category": "urgency",
+      "weight": 7,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Ask a low-pressure question instead."
+    },
+    {
+      "id": "SW022",
+      "term": "reply now",
+      "category": "urgency",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Ask a low-pressure question instead."
+    },
+    {
+      "id": "SW023",
+      "term": "open immediately",
+      "category": "urgency",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove; reads as phishing."
+    },
+    {
+      "id": "SW024",
+      "term": "do not delete",
+      "category": "urgency",
+      "weight": 8,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove; a strong spam and phishing signal."
+    },
+    {
+      "id": "SW025",
+      "term": "don't delete",
+      "category": "urgency",
+      "weight": 8,
+      "match": "regex",
+      "applies_to": "any",
+      "suggestion": "Remove; a strong spam and phishing signal.",
+      "pattern": "don['’]?t\\s+delete"
+    },
+    {
+      "id": "SW026",
+      "term": "make money",
+      "category": "financial",
+      "weight": 9,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove income claims; describe the business outcome instead."
+    },
+    {
+      "id": "SW027",
+      "term": "earn money",
+      "category": "financial",
+      "weight": 9,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove income claims."
+    },
+    {
+      "id": "SW028",
+      "term": "extra income",
+      "category": "financial",
+      "weight": 9,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove income claims."
+    },
+    {
+      "id": "SW029",
+      "term": "get paid",
+      "category": "financial",
+      "weight": 9,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove income claims."
+    },
+    {
+      "id": "SW030",
+      "term": "cash bonus",
+      "category": "financial",
+      "weight": 8,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove cash incentives."
+    },
+    {
+      "id": "SW031",
+      "term": "cash",
+      "category": "financial",
+      "weight": 5,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Avoid money words in prospecting copy; quantify business impact instead."
+    },
+    {
+      "id": "SW032",
+      "term": "double your income",
+      "category": "financial",
+      "weight": 9,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove income multiplication claims."
+    },
+    {
+      "id": "SW033",
+      "term": "double your",
+      "category": "financial",
+      "weight": 8,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Replace multiplication claims with a specific, verifiable result."
+    },
+    {
+      "id": "SW034",
+      "term": "million dollars",
+      "category": "financial",
+      "weight": 8,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove large-money claims."
+    },
+    {
+      "id": "SW035",
+      "term": "billion",
+      "category": "financial",
+      "weight": 5,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove large-money claims unless it is a factual metric."
+    },
+    {
+      "id": "SW036",
+      "term": "financial freedom",
+      "category": "financial",
+      "weight": 8,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove income/lifestyle claims."
+    },
+    {
+      "id": "SW037",
+      "term": "be your own boss",
+      "category": "financial",
+      "weight": 8,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove work-from-home recruiting language."
+    },
+    {
+      "id": "SW038",
+      "term": "work from home",
+      "category": "financial",
+      "weight": 9,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove work-from-home recruiting language."
+    },
+    {
+      "id": "SW039",
+      "term": "investment opportunity",
+      "category": "financial",
+      "weight": 7,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove investment solicitation language."
+    },
+    {
+      "id": "SW040",
+      "term": "no credit check",
+      "category": "financial",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove lending language."
+    },
+    {
+      "id": "SW041",
+      "term": "pre-approved",
+      "category": "financial",
+      "weight": 7,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove; reads as a credit offer or phishing."
+    },
+    {
+      "id": "SW042",
+      "term": "lowest rate",
+      "category": "financial",
+      "weight": 7,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove lending/pricing promotion language."
+    },
+    {
+      "id": "SW043",
+      "term": "consolidate debt",
+      "category": "financial",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove lending language."
+    },
+    {
+      "id": "SW044",
+      "term": "refinance",
+      "category": "financial",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove lending language."
+    },
+    {
+      "id": "SW045",
+      "term": "credit card",
+      "category": "financial",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Avoid payment-instrument language in cold email."
+    },
+    {
+      "id": "SW046",
+      "term": "wire transfer",
+      "category": "financial",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove; strongly associated with fraud."
+    },
+    {
+      "id": "SW047",
+      "term": "money back",
+      "category": "financial",
+      "weight": 7,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove refund promotion language."
+    },
+    {
+      "id": "SW048",
+      "term": "fast cash",
+      "category": "financial",
+      "weight": 8,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove."
+    },
+    {
+      "id": "SW049",
+      "term": "$$$",
+      "category": "financial",
+      "weight": 9,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove currency symbol runs."
+    },
+    {
+      "id": "SW050",
+      "term": "income claim ($ per day/week/month)",
+      "category": "financial",
+      "weight": 7,
+      "match": "regex",
+      "applies_to": "any",
+      "suggestion": "Remove earnings claims; describe the business result instead.",
+      "pattern": "\\$\\s?\\d[\\d,]*(?:\\.\\d+)?\\s?[kKmM]?\\s*(?:/|per|a|an|every)\\s*(?:day|week|month|hour)"
+    },
+    {
+      "id": "SW051",
+      "term": "big money figure",
+      "category": "financial",
+      "weight": 6,
+      "match": "regex",
+      "applies_to": "any",
+      "suggestion": "Avoid headline money figures; use a specific, verifiable metric with context.",
+      "pattern": "\\$\\s?\\d{1,3}(?:,\\d{3}){2,}|\\$\\s?\\d+(?:\\.\\d+)?\\s?(?:million|billion|mm|bn)\\b"
+    },
+    {
+      "id": "SW052",
+      "term": "free",
+      "category": "free_offer",
+      "weight": 3,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "'Free' alone is mild, but avoid it in the subject and avoid repeating it."
+    },
+    {
+      "id": "SW053",
+      "term": "100% free",
+      "category": "free_offer",
+      "weight": 7,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove; a classic spam trigger."
+    },
+    {
+      "id": "SW054",
+      "term": "free gift",
+      "category": "free_offer",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove giveaway language."
+    },
+    {
+      "id": "SW055",
+      "term": "free trial",
+      "category": "free_offer",
+      "weight": 5,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Mention trials only after interest; avoid in the first touch."
+    },
+    {
+      "id": "SW056",
+      "term": "free access",
+      "category": "free_offer",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove giveaway language."
+    },
+    {
+      "id": "SW057",
+      "term": "free consultation",
+      "category": "free_offer",
+      "weight": 4,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Offer a specific, short conversation instead."
+    },
+    {
+      "id": "SW058",
+      "term": "no cost",
+      "category": "free_offer",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove; implies a promotion."
+    },
+    {
+      "id": "SW059",
+      "term": "at no charge",
+      "category": "free_offer",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove; implies a promotion."
+    },
+    {
+      "id": "SW060",
+      "term": "giveaway",
+      "category": "free_offer",
+      "weight": 7,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove giveaway language."
+    },
+    {
+      "id": "SW061",
+      "term": "you have been selected",
+      "category": "free_offer",
+      "weight": 8,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove; a lottery and phishing pattern."
+    },
+    {
+      "id": "SW062",
+      "term": "you've been selected",
+      "category": "free_offer",
+      "weight": 8,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove; a lottery and phishing pattern."
+    },
+    {
+      "id": "SW063",
+      "term": "winner",
+      "category": "free_offer",
+      "weight": 9,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove; a lottery and phishing pattern."
+    },
+    {
+      "id": "SW064",
+      "term": "you have won",
+      "category": "free_offer",
+      "weight": 9,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove; a lottery and phishing pattern."
+    },
+    {
+      "id": "SW065",
+      "term": "congratulations",
+      "category": "free_offer",
+      "weight": 9,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove from prospecting copy; a prize-scam pattern."
+    },
+    {
+      "id": "SW066",
+      "term": "claim your",
+      "category": "free_offer",
+      "weight": 8,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove prize-claim language."
+    },
+    {
+      "id": "SW067",
+      "term": "bonus",
+      "category": "free_offer",
+      "weight": 7,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove promotional incentives from cold copy."
+    },
+    {
+      "id": "SW068",
+      "term": "prize",
+      "category": "free_offer",
+      "weight": 7,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove prize language."
+    },
+    {
+      "id": "SW069",
+      "term": "guaranteed",
+      "category": "guarantee",
+      "weight": 7,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Replace with evidence (a result, a case, a metric)."
+    },
+    {
+      "id": "SW070",
+      "term": "guarantee",
+      "category": "guarantee",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Replace with evidence (a result, a case, a metric)."
+    },
+    {
+      "id": "SW071",
+      "term": "100% guaranteed",
+      "category": "guarantee",
+      "weight": 7,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove absolute claims."
+    },
+    {
+      "id": "SW072",
+      "term": "risk-free",
+      "category": "guarantee",
+      "weight": 7,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove risk-reversal language."
+    },
+    {
+      "id": "SW073",
+      "term": "risk free",
+      "category": "guarantee",
+      "weight": 7,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove risk-reversal language."
+    },
+    {
+      "id": "SW074",
+      "term": "no risk",
+      "category": "guarantee",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove risk-reversal language."
+    },
+    {
+      "id": "SW075",
+      "term": "no obligation",
+      "category": "guarantee",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove; implies a hard-sell offer."
+    },
+    {
+      "id": "SW076",
+      "term": "no strings attached",
+      "category": "guarantee",
+      "weight": 7,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove; a promotional cliche."
+    },
+    {
+      "id": "SW077",
+      "term": "no catch",
+      "category": "guarantee",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove."
+    },
+    {
+      "id": "SW078",
+      "term": "satisfaction guaranteed",
+      "category": "guarantee",
+      "weight": 7,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove retail guarantee language."
+    },
+    {
+      "id": "SW079",
+      "term": "cancel at any time",
+      "category": "guarantee",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Save terms for later in the sales process."
+    },
+    {
+      "id": "SW080",
+      "term": "cancel anytime",
+      "category": "guarantee",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Save terms for later in the sales process."
+    },
+    {
+      "id": "SW081",
+      "term": "no questions asked",
+      "category": "guarantee",
+      "weight": 5,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove."
+    },
+    {
+      "id": "SW082",
+      "term": "100%",
+      "category": "guarantee",
+      "weight": 7,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Avoid absolute percentages; state a real, sourced figure."
+    },
+    {
+      "id": "SW083",
+      "term": "percentage-off discount",
+      "category": "guarantee",
+      "weight": 6,
+      "match": "regex",
+      "applies_to": "any",
+      "suggestion": "Avoid discount framing in cold outreach.",
+      "pattern": "\\b\\d{1,3}\\s?%\\s*off\\b"
+    },
+    {
+      "id": "SW084",
+      "term": "buy now",
+      "category": "aggressive_sales",
+      "weight": 8,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove; cold outreach should ask a question, not close a sale."
+    },
+    {
+      "id": "SW085",
+      "term": "order now",
+      "category": "aggressive_sales",
+      "weight": 7,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove hard-sell CTA."
+    },
+    {
+      "id": "SW086",
+      "term": "purchase now",
+      "category": "aggressive_sales",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove hard-sell CTA."
+    },
+    {
+      "id": "SW087",
+      "term": "click here",
+      "category": "aggressive_sales",
+      "weight": 7,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Use descriptive link text, or better, no link in the first email."
+    },
+    {
+      "id": "SW088",
+      "term": "click below",
+      "category": "aggressive_sales",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Ask for a reply instead of a click."
+    },
+    {
+      "id": "SW089",
+      "term": "click now",
+      "category": "aggressive_sales",
+      "weight": 5,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Ask for a reply instead of a click."
+    },
+    {
+      "id": "SW090",
+      "term": "sign up now",
+      "category": "aggressive_sales",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Ask for interest first."
+    },
+    {
+      "id": "SW091",
+      "term": "apply now",
+      "category": "aggressive_sales",
+      "weight": 5,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove hard-sell CTA."
+    },
+    {
+      "id": "SW092",
+      "term": "call now",
+      "category": "aggressive_sales",
+      "weight": 5,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Ask a question instead."
+    },
+    {
+      "id": "SW093",
+      "term": "special promotion",
+      "category": "aggressive_sales",
+      "weight": 7,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove promotional language."
+    },
+    {
+      "id": "SW094",
+      "term": "exclusive deal",
+      "category": "aggressive_sales",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove promotional language."
+    },
+    {
+      "id": "SW095",
+      "term": "exclusive offer",
+      "category": "aggressive_sales",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove promotional language."
+    },
+    {
+      "id": "SW096",
+      "term": "special offer",
+      "category": "aggressive_sales",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove promotional language."
+    },
+    {
+      "id": "SW097",
+      "term": "discount",
+      "category": "aggressive_sales",
+      "weight": 5,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Avoid discounts in the first touch."
+    },
+    {
+      "id": "SW098",
+      "term": "lowest price",
+      "category": "aggressive_sales",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove price promotion language."
+    },
+    {
+      "id": "SW099",
+      "term": "best price",
+      "category": "aggressive_sales",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove price promotion language."
+    },
+    {
+      "id": "SW100",
+      "term": "save big",
+      "category": "aggressive_sales",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove promotional language."
+    },
+    {
+      "id": "SW101",
+      "term": "bargain",
+      "category": "aggressive_sales",
+      "weight": 5,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove promotional language."
+    },
+    {
+      "id": "SW102",
+      "term": "cheap",
+      "category": "aggressive_sales",
+      "weight": 5,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove; signals low quality and promotion."
+    },
+    {
+      "id": "SW103",
+      "term": "for only",
+      "category": "aggressive_sales",
+      "weight": 5,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove price-anchoring language."
+    },
+    {
+      "id": "SW104",
+      "term": "best deal",
+      "category": "aggressive_sales",
+      "weight": 5,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove promotional language."
+    },
+    {
+      "id": "SW105",
+      "term": "increase sales",
+      "category": "aggressive_sales",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Name a specific, credible outcome instead of a generic sales promise."
+    },
+    {
+      "id": "SW106",
+      "term": "increase your sales",
+      "category": "aggressive_sales",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Name a specific, credible outcome instead of a generic sales promise."
+    },
+    {
+      "id": "SW107",
+      "term": "book a demo today",
+      "category": "aggressive_sales",
+      "weight": 4,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Ask whether the problem is relevant first."
+    },
+    {
+      "id": "SW108",
+      "term": "schedule a call today",
+      "category": "aggressive_sales",
+      "weight": 4,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Ask whether the problem is relevant first."
+    },
+    {
+      "id": "SW109",
+      "term": "sale",
+      "category": "aggressive_sales",
+      "weight": 5,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Avoid 'sale' in prospecting copy."
+    },
+    {
+      "id": "SW110",
+      "term": "as discussed",
+      "category": "deceptive",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Only use if you actually spoke; otherwise it is deceptive familiarity."
+    },
+    {
+      "id": "SW111",
+      "term": "as per our conversation",
+      "category": "deceptive",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Only use if you actually spoke."
+    },
+    {
+      "id": "SW112",
+      "term": "following up on our call",
+      "category": "deceptive",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Only use if a call actually happened."
+    },
+    {
+      "id": "SW113",
+      "term": "per our phone call",
+      "category": "deceptive",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Only use if a call actually happened."
+    },
+    {
+      "id": "SW114",
+      "term": "you requested",
+      "category": "deceptive",
+      "weight": 7,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Only use if the recipient requested something."
+    },
+    {
+      "id": "SW115",
+      "term": "verify your account",
+      "category": "deceptive",
+      "weight": 8,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove; a phishing pattern."
+    },
+    {
+      "id": "SW116",
+      "term": "confirm your account",
+      "category": "deceptive",
+      "weight": 8,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove; a phishing pattern."
+    },
+    {
+      "id": "SW117",
+      "term": "account suspended",
+      "category": "deceptive",
+      "weight": 8,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove; a phishing pattern."
+    },
+    {
+      "id": "SW118",
+      "term": "security alert",
+      "category": "deceptive",
+      "weight": 8,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove; a phishing pattern."
+    },
+    {
+      "id": "SW119",
+      "term": "unusual activity",
+      "category": "deceptive",
+      "weight": 7,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove; a phishing pattern."
+    },
+    {
+      "id": "SW120",
+      "term": "update your payment",
+      "category": "deceptive",
+      "weight": 7,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove; a phishing pattern."
+    },
+    {
+      "id": "SW121",
+      "term": "invoice attached",
+      "category": "deceptive",
+      "weight": 7,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove unless genuinely sending an invoice to a customer."
+    },
+    {
+      "id": "SW122",
+      "term": "payment overdue",
+      "category": "deceptive",
+      "weight": 7,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove; collections and phishing language."
+    },
+    {
+      "id": "SW123",
+      "term": "your password",
+      "category": "deceptive",
+      "weight": 7,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Never reference passwords in outbound copy."
+    },
+    {
+      "id": "SW124",
+      "term": "login now",
+      "category": "deceptive",
+      "weight": 8,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove; a phishing pattern."
+    },
+    {
+      "id": "SW125",
+      "term": "important information regarding",
+      "category": "deceptive",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove; a phishing and spam opener."
+    },
+    {
+      "id": "SW126",
+      "term": "dear friend",
+      "category": "deceptive",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Use the recipient's name or a neutral greeting."
+    },
+    {
+      "id": "SW127",
+      "term": "dear sir or madam",
+      "category": "deceptive",
+      "weight": 5,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Use the recipient's name."
+    },
+    {
+      "id": "SW128",
+      "term": "to whom it may concern",
+      "category": "deceptive",
+      "weight": 5,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Use the recipient's name."
+    },
+    {
+      "id": "SW129",
+      "term": "once in a lifetime",
+      "category": "hype",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove hype."
+    },
+    {
+      "id": "SW130",
+      "term": "miracle",
+      "category": "hype",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove hype."
+    },
+    {
+      "id": "SW131",
+      "term": "amazing",
+      "category": "hype",
+      "weight": 5,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Replace with a specific, factual detail."
+    },
+    {
+      "id": "SW132",
+      "term": "incredible",
+      "category": "hype",
+      "weight": 5,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Replace with a specific, factual detail."
+    },
+    {
+      "id": "SW133",
+      "term": "unbelievable",
+      "category": "hype",
+      "weight": 5,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Replace with a specific, factual detail."
+    },
+    {
+      "id": "SW134",
+      "term": "revolutionary",
+      "category": "hype",
+      "weight": 5,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Replace with what it does, concretely."
+    },
+    {
+      "id": "SW135",
+      "term": "game changer",
+      "category": "hype",
+      "weight": 5,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Replace with what changes, concretely."
+    },
+    {
+      "id": "SW136",
+      "term": "game-changer",
+      "category": "hype",
+      "weight": 5,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Replace with what changes, concretely."
+    },
+    {
+      "id": "SW137",
+      "term": "secret",
+      "category": "hype",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove 'secret' framing."
+    },
+    {
+      "id": "SW138",
+      "term": "best in the world",
+      "category": "hype",
+      "weight": 5,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove unverifiable superlatives."
+    },
+    {
+      "id": "SW139",
+      "term": "world's best",
+      "category": "hype",
+      "weight": 5,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove unverifiable superlatives."
+    },
+    {
+      "id": "SW140",
+      "term": "instant results",
+      "category": "hype",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove; unrealistic promise."
+    },
+    {
+      "id": "SW141",
+      "term": "skyrocket",
+      "category": "hype",
+      "weight": 5,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Replace with a specific, credible result."
+    },
+    {
+      "id": "SW142",
+      "term": "10x",
+      "category": "hype",
+      "weight": 5,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Replace with a specific, sourced result."
+    },
+    {
+      "id": "SW143",
+      "term": "you won't believe",
+      "category": "hype",
+      "weight": 6,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove clickbait."
+    },
+    {
+      "id": "SW144",
+      "term": "this is not spam",
+      "category": "spam_disclaimer",
+      "weight": 10,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove. Self-declaring 'not spam' is one of the strongest spam signals."
+    },
+    {
+      "id": "SW145",
+      "term": "this isn't spam",
+      "category": "spam_disclaimer",
+      "weight": 10,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove. Self-declaring 'not spam' is one of the strongest spam signals."
+    },
+    {
+      "id": "SW146",
+      "term": "not spam",
+      "category": "spam_disclaimer",
+      "weight": 10,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove. Self-declaring 'not spam' is one of the strongest spam signals."
+    },
+    {
+      "id": "SW147",
+      "term": "this is not a sales email",
+      "category": "spam_disclaimer",
+      "weight": 8,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove; if it is outreach, be honest and brief."
+    },
+    {
+      "id": "SW148",
+      "term": "you are receiving this because",
+      "category": "spam_disclaimer",
+      "weight": 7,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Rewrite as a short, human reason for reaching out."
+    },
+    {
+      "id": "SW149",
+      "term": "bulk email",
+      "category": "spam_disclaimer",
+      "weight": 8,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove."
+    },
+    {
+      "id": "SW150",
+      "term": "mass email",
+      "category": "spam_disclaimer",
+      "weight": 8,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove."
+    },
+    {
+      "id": "SW151",
+      "term": "remove me",
+      "category": "spam_disclaimer",
+      "weight": 7,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Use a natural opt-out line instead ('If this isn't relevant, just let me know.')."
+    },
+    {
+      "id": "SW152",
+      "term": "quick question",
+      "category": "cliche_tone",
+      "weight": 2,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Overused opener; lead with the specific reason you are writing."
+    },
+    {
+      "id": "SW153",
+      "term": "hope this email finds you well",
+      "category": "cliche_tone",
+      "weight": 2,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Cut the filler opener."
+    },
+    {
+      "id": "SW154",
+      "term": "hope this finds you well",
+      "category": "cliche_tone",
+      "weight": 2,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Cut the filler opener."
+    },
+    {
+      "id": "SW155",
+      "term": "i hope you are doing well",
+      "category": "cliche_tone",
+      "weight": 2,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Cut the filler opener."
+    },
+    {
+      "id": "SW156",
+      "term": "just following up",
+      "category": "cliche_tone",
+      "weight": 3,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Add new value in each follow-up instead of 'just following up'."
+    },
+    {
+      "id": "SW157",
+      "term": "just checking in",
+      "category": "cliche_tone",
+      "weight": 3,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Add new value in each follow-up."
+    },
+    {
+      "id": "SW158",
+      "term": "bumping this",
+      "category": "cliche_tone",
+      "weight": 3,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Add new value in each follow-up."
+    },
+    {
+      "id": "SW159",
+      "term": "bump this to the top of your inbox",
+      "category": "cliche_tone",
+      "weight": 3,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Add new value in each follow-up."
+    },
+    {
+      "id": "SW160",
+      "term": "per my last email",
+      "category": "cliche_tone",
+      "weight": 4,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Reads as passive-aggressive; restate the value instead."
+    },
+    {
+      "id": "SW161",
+      "term": "circle back",
+      "category": "cliche_tone",
+      "weight": 3,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Use plain language."
+    },
+    {
+      "id": "SW162",
+      "term": "touch base",
+      "category": "cliche_tone",
+      "weight": 2,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Use plain language."
+    },
+    {
+      "id": "SW163",
+      "term": "i'll be brief",
+      "category": "cliche_tone",
+      "weight": 3,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Just be brief."
+    },
+    {
+      "id": "SW164",
+      "term": "pick your brain",
+      "category": "cliche_tone",
+      "weight": 3,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Ask a specific question instead."
+    },
+    {
+      "id": "SW165",
+      "term": "15 minutes of your time",
+      "category": "cliche_tone",
+      "weight": 3,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Ask a relevance question before asking for time."
+    },
+    {
+      "id": "SW166",
+      "term": "did you get my last email",
+      "category": "cliche_tone",
+      "weight": 4,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Restate value instead of guilting the reader."
+    },
+    {
+      "id": "SW167",
+      "term": "you're missing out",
+      "category": "cliche_tone",
+      "weight": 4,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Replace with the specific outcome."
+    },
+    {
+      "id": "SW168",
+      "term": "synergy",
+      "category": "cliche_tone",
+      "weight": 3,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Use plain language."
+    },
+    {
+      "id": "SW169",
+      "term": "leverage",
+      "category": "cliche_tone",
+      "weight": 3,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Use plain language."
+    },
+    {
+      "id": "SW170",
+      "term": "viagra",
+      "category": "sensitive",
+      "weight": 9,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove; pharma spam term."
+    },
+    {
+      "id": "SW171",
+      "term": "prescription",
+      "category": "sensitive",
+      "weight": 8,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove unless your business genuinely requires it."
+    },
+    {
+      "id": "SW172",
+      "term": "pharmacy",
+      "category": "sensitive",
+      "weight": 8,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove unless your business genuinely requires it."
+    },
+    {
+      "id": "SW173",
+      "term": "weight loss",
+      "category": "sensitive",
+      "weight": 8,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove health-claim language."
+    },
+    {
+      "id": "SW174",
+      "term": "lose weight",
+      "category": "sensitive",
+      "weight": 8,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove health-claim language."
+    },
+    {
+      "id": "SW175",
+      "term": "casino",
+      "category": "sensitive",
+      "weight": 8,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove gambling terms."
+    },
+    {
+      "id": "SW176",
+      "term": "gambling",
+      "category": "sensitive",
+      "weight": 7,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove gambling terms."
+    },
+    {
+      "id": "SW177",
+      "term": "lottery",
+      "category": "sensitive",
+      "weight": 7,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove lottery terms."
+    },
+    {
+      "id": "SW178",
+      "term": "crypto",
+      "category": "sensitive",
+      "weight": 7,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Avoid crypto terms in B2B prospecting unless core to your offer."
+    },
+    {
+      "id": "SW179",
+      "term": "bitcoin",
+      "category": "sensitive",
+      "weight": 7,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Avoid crypto terms unless core to your offer."
+    },
+    {
+      "id": "SW180",
+      "term": "adult",
+      "category": "sensitive",
+      "weight": 5,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove; adult-content trigger."
+    },
+    {
+      "id": "SW181",
+      "term": "nigerian prince",
+      "category": "sensitive",
+      "weight": 9,
+      "match": "phrase",
+      "applies_to": "any",
+      "suggestion": "Remove."
+    }
+  ],
+  "safe_acronyms": [
+    "AE",
+    "AI",
+    "APAC",
+    "API",
+    "ARR",
+    "ASAP",
+    "AWS",
+    "B2B",
+    "B2C",
+    "BDR",
+    "CAC",
+    "CCPA",
+    "CEO",
+    "CFO",
+    "CISO",
+    "CMO",
+    "COO",
+    "CPA",
+    "CRM",
+    "CRO",
+    "CSV",
+    "CTO",
+    "EMEA",
+    "ERP",
+    "ETA",
+    "EU",
+    "EVP",
+    "FAQ",
+    "FYI",
+    "GCP",
+    "GDPR",
+    "GMBH",
+    "GTM",
+    "HIPAA",
+    "HR",
+    "HTML",
+    "HubSpot",
+    "ICP",
+    "INC",
+    "IT",
+    "KPI",
+    "LLC",
+    "LLM",
+    "LTD",
+    "LTV",
+    "MBA",
+    "ML",
+    "MQL",
+    "MRR",
+    "N/A",
+    "NPS",
+    "NYC",
+    "OK",
+    "OKR",
+    "PDF",
+    "PHD",
+    "PLC",
+    "PPC",
+    "PR",
+    "QA",
+    "RevOps",
+    "ROI",
+    "SaaS",
+    "SDR",
+    "SEM",
+    "SEO",
+    "SLA",
+    "SMB",
+    "SOC",
+    "SQL",
+    "SVP",
+    "TL;DR",
+    "UI",
+    "UK",
+    "USA",
+    "UX",
+    "VP"
+  ],
+  "url_shorteners": [
+    "bit.ly",
+    "tinyurl.com",
+    "t.co",
+    "goo.gl",
+    "ow.ly",
+    "is.gd",
+    "buff.ly",
+    "rebrand.ly",
+    "cutt.ly",
+    "shorturl.at",
+    "tiny.cc",
+    "rb.gy",
+    "lnkd.in",
+    "bl.ink",
+    "t.ly",
+    "s.id",
+    "v.gd",
+    "clck.ru",
+    "shorte.st",
+    "adf.ly"
+  ],
+  "placeholder_patterns": [
+    {
+      "id": "PH001",
+      "pattern": "\\[(?:first[ _]?name|last[ _]?name|full[ _]?name|name|company(?:[ _]?name)?|title|job[ _]?title|your[ _]?name|city|industry|pain[ _]?point|insert[^\\]]*)\\]",
+      "message": "Bracket placeholder left in the copy"
+    },
+    {
+      "id": "PH002",
+      "pattern": "\\b(?:TODO|TBD|FIXME)\\b",
+      "message": "Draft marker left in the copy",
+      "case_sensitive": true
+    },
+    {
+      "id": "PH003",
+      "pattern": "\\bX{3,}\\b",
+      "message": "XXX placeholder left in the copy",
+      "case_sensitive": true
+    },
+    {
+      "id": "PH004",
+      "pattern": "lorem ipsum",
+      "message": "Lorem ipsum filler text left in the copy"
+    },
+    {
+      "id": "PH005",
+      "pattern": "<(?:insert|your|company|name)[^<>]{0,40}>",
+      "message": "Angle-bracket placeholder left in the copy"
+    }
+  ],
+  "foreign_merge_syntaxes": [
+    {
+      "name": "Mailchimp merge tag",
+      "pattern": "\\*\\|[A-Z0-9_]+\\|\\*",
+      "example": "*|FNAME|*"
+    },
+    {
+      "name": "Percent-delimited merge tag",
+      "pattern": "%[A-Za-z][A-Za-z0-9_]{2,}%",
+      "example": "%FIRSTNAME%"
+    },
+    {
+      "name": "Double angle-bracket merge tag",
+      "pattern": "<<\\s*[A-Za-z_][A-Za-z0-9_ ]*\\s*>>",
+      "example": "<<First Name>>"
+    },
+    {
+      "name": "Dollar-brace template variable",
+      "pattern": "\\$\\{\\s*[A-Za-z_][A-Za-z0-9_.]*\\s*\\}",
+      "example": "${firstName}"
+    },
+    {
+      "name": "Liquid / Jinja block tag",
+      "pattern": "\\{%-?\\s*[a-z]+[^%]*%\\}",
+      "example": "{% if company %}"
+    },
+    {
+      "name": "HubSpot personalization token",
+      "pattern": "\\{\\{\\s*(?:contact|company|deal|owner)\\.[a-z0-9_]+\\s*\\}\\}",
+      "example": "{{ contact.firstname }}"
+    }
+  ],
+  "platforms": {
+    "generic": {
+      "description": "Any {{variable}} name is accepted. Use when your engine is not listed.",
+      "strict": false,
+      "allows_whitespace": true,
+      "allows_fallback": false,
+      "supports_random_spintax": true,
+      "supports_brace_spintax": true,
+      "variables": []
+    },
+    "smartlead": {
+      "description": "Default Smartlead lead variables in snake_case. Verify against your workspace and add custom fields with --custom-fields.",
+      "strict": true,
+      "allows_whitespace": false,
+      "allows_fallback": false,
+      "supports_random_spintax": false,
+      "supports_brace_spintax": true,
+      "variables": [
+        "first_name",
+        "last_name",
+        "email",
+        "phone_number",
+        "company_name",
+        "website",
+        "location",
+        "linkedin_profile",
+        "company_url"
+      ]
+    },
+    "instantly": {
+      "description": "Default Instantly lead variables in camelCase, plus {{RANDOM | a | b}} spintax. Verify against your workspace and add custom fields with --custom-fields.",
+      "strict": true,
+      "allows_whitespace": true,
+      "allows_fallback": false,
+      "supports_random_spintax": true,
+      "supports_brace_spintax": false,
+      "variables": [
+        "firstName",
+        "lastName",
+        "email",
+        "companyName",
+        "website",
+        "phone",
+        "personalization",
+        "jobTitle",
+        "location",
+        "companyDomain",
+        "sendingAccountFirstName",
+        "accountSignature"
+      ]
+    }
+  }
+}
