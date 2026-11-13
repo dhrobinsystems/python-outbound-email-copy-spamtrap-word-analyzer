@@ -1,0 +1,20 @@
+{
+  "name": "Demo sequence (synthetic)",
+  "steps": [
+    {
+      "step": 1,
+      "subject": "Re: URGENT - 100% FREE offer for {{company_name}}!!!",
+      "body": "<p>Hi {{first_name}},</p>\n<p>ACT NOW! This is not spam. We GUARANTEE you will double your revenue with our risk-free, once in a lifetime deal.</p>\n<p><a href=\"https://bit.ly/demo-link\">Click here</a> to claim your free gift, or visit <a href=\"https://example-tracker.example/r\">www.example.com</a>.</p>\n<img src=\"http://tracking.example.com/open.gif?id={{lead_id}\" width=\"1\" height=\"1\">\n<p>Thanks,<br>{{sender_name}}</p>"
+    },
+    {
+      "step": 2,
+      "subject": "",
+      "body": "Hi {first_name},\n\nJust following up on my last note. Did {{companyName}} get a chance to look at [Company] pain points?\n\nIf it's not a priority, just let me know and I won't follow up.\n\nBest,\n{{sender_name}}"
+    },
+    {
+      "step": 3,
+      "subject": "",
+      "body": "Hi {{first_name}},\n\nOne last idea: teams like {{company_name}} usually cut manual CRM cleanup by automating duplicate checks before each import.\n\nWorth a short conversation next week, or should I close the loop?\n\nIf this isn't relevant, just let me know and I won't reach out again.\n\n{{sender_name}}"
+    }
+  ]
+}
