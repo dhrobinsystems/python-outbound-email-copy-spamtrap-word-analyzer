@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Tests (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      # Standard library only: nothing to install.
+      - name: Compile check
+        run: python -m py_compile analyzer.py tests/test_analyzer.py
+
+      - name: Validate rules file and list terms
+        run: python analyzer.py --list-rules > /dev/null
+
+      - name: Unit tests
+        run: python -m unittest discover -s tests -v
+
+      - name: Sample sequence must FAIL (exit code 1)
+        run: |
+          set +e
+          python analyzer.py examples/sample_sequence.json --platform smartlead \
+            --custom-fields sender_name,lead_id --format json --no-timestamp > report.json
+          code=$?
+          set -e
+          test "$code" -eq 1
+          python -c "import json; r=json.load(open('report.json')); assert r['summary']['status']=='FAIL'; print(r['summary'])"
